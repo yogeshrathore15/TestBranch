@@ -11,7 +11,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Deliver for development') {
+        stage('Deliver for staging') {
             when {
                 branch 'dev' 
             }
