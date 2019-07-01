@@ -16,7 +16,7 @@ pipeline {
                 branch 'dev' 
             }
             steps {
-                echo Develope
+                cat Develope
             }
         }
         stage('Deploy for production') {
