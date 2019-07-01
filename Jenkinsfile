@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'ubuntu:latest'
-            args '-p 80:80' 
-        }
+    agent none
     }
     stages {
         stage('SourceCode') {
