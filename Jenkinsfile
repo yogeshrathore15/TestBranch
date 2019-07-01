@@ -1,12 +1,12 @@
 pipeline {
-    agent none
+    agent { docker 'ubuntu:latest'}
     stages {
         stage('SourceCode') {
             steps {
                 checkout scm
             }
         }
-        stage('Deliver for staging') {
+        stage('Deliver to staging') {
             when {
                 branch 'dev' 
             }
@@ -14,7 +14,7 @@ pipeline {
                 cat Develope
             }
         }
-        stage('Deploy for production') {
+        stage('Deploy to production') {
             when {
                 branch 'master'  
             }
