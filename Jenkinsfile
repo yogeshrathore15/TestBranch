@@ -1,12 +1,13 @@
 pipeline {
     agent any
     stages {
-        stage('SourceCode') {
+        stage('Clean & Checkout SourceCode') {
             steps {
+                deleteDir()
                 checkout scm
             }
         }
-        stage('Deliver to staging') {
+        stage('Deliver to staging ') {
             when {
                 branch 'dev' 
             }
