@@ -1,30 +1,25 @@
 pipeline {
-    agent {
-        docker {
-            image 'ubuntu-18.04'
-            args '-p 3000:3000 -p 80:80' 
-        }
-    }
+    agent any
     stages {
         stage('SourceCode') {
             steps {
                 checkout scm
             }
         }
-        stage('Deliver for development') {
+        stage('Deliver to staging') {
             when {
                 branch 'dev' 
             }
             steps {
-                cat Develope
+               sh 'cat Develope'
             }
         }
-        stage('Deploy for production') {
+        stage('Deploy to production') {
             when {
                 branch 'master'  
             }
             steps {
-                cat Production
+                sh 'cat Production'
             }
         }
     }
