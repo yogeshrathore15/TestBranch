@@ -1,8 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'ubuntu-18.04'
-            args '-p 3000:3000 -p 80:80' 
+            image 'ubuntu:latest'
+            args '-p 80:80' 
         }
     }
     stages {
