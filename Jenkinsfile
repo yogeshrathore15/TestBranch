@@ -11,7 +11,7 @@ pipeline {
                 branch 'dev' 
             }
             steps {
-                cat Develope
+               sh 'cat Develope'
             }
         }
         stage('Deploy to production') {
@@ -19,7 +19,7 @@ pipeline {
                 branch 'master'  
             }
             steps {
-                cat Production
+                sh 'cat Production'
             }
         }
     }
